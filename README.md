@@ -46,9 +46,9 @@ python lorenz.py
 
 | Model                        | Equation Form                                                                                                                                  | Parameters/Description                              |
 | ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
-| **Riccati Equation**      | $\frac{dy}{dt} = q_0(t) + q_1(t)y + q_2(t)y^2$                                                      | Nonlinear first-order ODE; `q₀(t)`, `q₁(t)`, `q₂(t)` are time-dependent coefficients    |
-| **Singular Equation**           | $\frac{dy}{dt} = \frac{1}{10 - t}$                                        |Exhibits singularity at `t = 10`; useful for testing numerical stability near divergence  |
-| **Airy Equation**    |  $\frac{d^2y}{dt^2} - t y = 0$            | `μ`: Nonlinearity and damping strength              |  Linear second-order ODE; arises in quantum mechanics and wave propagation problems       |
+| **Riccati Equation**      | $\frac{dy}{dt} = q_0(t) + q_1(t)y + q_2(t)y^2$ | Nonlinear first-order ODE; `q₀(t)`, `q₁(t)`, `q₂(t)` are time-dependent coefficients |
+| **Singular Equation**           | $\frac{dy}{dt} = \frac{1}{10 - t}$ |Exhibits singularity at `t = 10`; useful for testing numerical stability near divergence |
+| **Airy Equation**    |  $\frac{d^2y}{dt^2} - t y = 0$ | `μ`: Nonlinearity and damping strength |  Linear second-order ODE; arises in quantum mechanics and wave propagation problems       |
 
 
 
