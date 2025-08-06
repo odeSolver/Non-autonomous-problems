@@ -5,13 +5,11 @@ This repository contains standalone Python scripts that solve various non-autono
 ## 📂 Examples
 
 - **Ricatti Problem** (`ricatti.py`)  
-  Predator-prey model with specified initial values.
-
+  Nonlinear first-order differential equation, often used in control theory and dynamic systems.
 - **Equation 1/(10-t)** (`oneOver(10-t).py`)  
-  Nonlinear oscillator dynamics.
-
+  Singular behavior near t=10; models time-dependent divergence in simple systems.
 - **Airy Equation** (`airy.py`)  
-  Classic chaotic system.
+  Linear second-order differential equation with applications in quantum mechanics and wave propagation.
 
 
 ## 🧠 Methodology
@@ -38,14 +36,19 @@ python lotka_volterra.py
 pyhom van_der_pol.py
 
 python lorenz.py
+| Model               | Equation Form                                                                 | Parameters / Description                                                                 |
+|--------------------|--------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
+| **Riccati Equation**| $\frac{dy}{dt} = q_0(t) + q_1(t)y + q_2(t)y^2$                                 | Nonlinear first-order ODE; `q₀(t)`, `q₁(t)`, `q₂(t)` are time-dependent coefficients     |
+| **Singular Equation**| $\frac{dy}{dt} = \frac{1}{10 - t}$                                            | Exhibits singularity at `t = 10`; useful for testing numerical stability near divergence |
+| **Airy Equation**   | $\frac{d^2y}{dt^2} - t y = 0$                                                  | Linear second-order ODE; arises in quantum mechanics and wave propagation problems       |
 
 ```
 
 | Model                        | Equation Form                                                                                                                                  | Parameters/Description                              |
 | ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
-| **Lotka-Volterra (2D)**      | $\frac{dx}{dt} = \alpha x - \beta x y$ <br> or <br> $\frac{dy}{dt} = \delta x y - \tau y$                                                     | `α`: Prey growth rate <br> `β`: Predation rate coefficient <br> `δ`: Predator increase rate per consumed prey <br> `τ`: Predator death rate |
-| **Lorenz System**            | $\frac{dx}{dt} = \sigma(y - x)$<br> $\frac{dy}{dt} = x(\rho - z) - y$ <br> $\frac{dz}{dt} = xy - \beta z $                                    | `σ`: Prandtl number (rate of thermal diffusion) <br> `ρ`: Rayleigh number (temperature difference) <br> `β`: Geometric factor (vertical dissipation) |
-| **Van der Pol Oscillator**   | $\frac{d^2x}{dt^2} - \mu(1 - x^2)\frac{dx}{dt} + x = 0$ <br> OR <br> $\frac{dx}{dt} = y$ <br> $\frac{dy}{dt} = \mu(1 - x^2)y - x $             | `μ`: Nonlinearity and damping strength              |
+| **Riccati Equation**      | $\frac{dy}{dt} = q_0(t) + q_1(t)y + q_2(t)y^2$                                                      | Nonlinear first-order ODE; `q₀(t)`, `q₁(t)`, `q₂(t)` are time-dependent coefficients    |
+| **Singular Equation**           | $\frac{dy}{dt} = \frac{1}{10 - t}$                                        |Exhibits singularity at `t = 10`; useful for testing numerical stability near divergence  |
+| **Airy Equation**    |  $\frac{d^2y}{dt^2} - t y = 0$            | `μ`: Nonlinearity and damping strength              |  Linear second-order ODE; arises in quantum mechanics and wave propagation problems       |
 
 
 
