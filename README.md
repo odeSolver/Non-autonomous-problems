@@ -4,9 +4,9 @@ This repository contains standalone Python scripts that solve various non-autono
 
 ## 📂 Examples
 
-- **Ricatti Problem** (`ricatti.py`)  
+- **Ricatti Problem** (`riccati.py`)  
   Nonlinear first-order differential equation, often used in control theory and dynamic systems.
-- **Equation 1/(10-t)** (`oneOver(10-t).py`)  
+- **Equation 1/(10-t)** (`singularEquation.py`)  
   Singular behavior near t=10; models time-dependent divergence in simple systems.
 - **Airy Equation** (`airy.py`)  
   Linear second-order differential equation with applications in quantum mechanics and wave propagation.
@@ -31,19 +31,19 @@ numpy, matplotlib, scipy
 ## ▶️ How to Run
 Open one of the .py files. Inside each file uder 'Initial Parameters', choose your initial values and method of choice (listed). 
 ```bash
-python lotka_volterra.py
+python riccati.py
 
-pyhom van_der_pol.py
+pyhom singularEquation.py
 
-python lorenz.py
+python airy.py
 
 ```
 
 | Model                        | Equation Form                                                                                                                                  | Parameters/Description                              |
 | ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
-| **Riccati Equation**      | $\frac{dy}{dt} = q_0(t) + q_1(t)y + q_2(t)y^2$ | Nonlinear first-order ODE; `q₀(t)`, `q₁(t)`, `q₂(t)` are time-dependent coefficients |
-| **Singular Equation**           | $\frac{dy}{dt} = \frac{1}{10 - t}$ |Exhibits singularity at `t = 10`; useful for testing numerical stability near divergence |
-| **Airy Equation**    |  $\frac{d^2y}{dt^2} - t y = 0$ |  Linear second-order ODE; arises in quantum mechanics and wave propagation problems    |
+| **Riccati Equation**      | $\frac{dx}{dt} = x^2 + t^2$, $x(s)=x_0$ | Nonlinear first-order ODE; `q₀(t)`, `q₁(t)`, `q₂(t)` are time-dependent coefficients |
+| **Singular Equation**           | $\frac{dx}{dt} = \frac{1}{10 - t}$, $x(s)=x_0$ |Exhibits singularity at `t = 10`; useful for testing numerical stability near divergence |
+| **Airy Equation**    |  $\frac{d^2y}{dt^2} - t y = 0$, $y(s)=x$, $y'(s)=z$ |  Linear second-order ODE; arises in quantum mechanics and wave propagation problems    |
 
 
 
