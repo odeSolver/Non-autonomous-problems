@@ -3,10 +3,10 @@ import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
 import os
 # Parameters
-s = 1        # Initial time
-x0 = 0       # Initial condition x(s) = x0
+s = 2        # Initial time
+x0 = 1       # Initial condition x(s) = x0
 n = 50   # Number of steps in custom method
-t_final = np.float64(2.14)  # Final time for integration
+t_final = 10-s # Final time for integration
 
 #Choose Method -> "lie_trotter", "strang", "third","sixth" ,"eight", "tenth", "twelfth" ,"fourteenth"
 method="lie_trotter"
@@ -18,11 +18,12 @@ dt = (t_final - s) / n
 
 
 # ==== Reference solution using solve_ivp ====
-def riccati_rhs(t, x):
-    return x**2 + t**2
+def rhs(t, x):
+    return (1 / (10 - t)) * x
+
 t_span = (s, t_final)
 t_eval = np.linspace(s, t_final, n+1)
-sol = solve_ivp(riccati_rhs, t_span, [x0], t_eval=t_eval, method='RK45',rtol=1e-8, atol=1e-8)
+sol = solve_ivp(rhs, t_span, [x0], t_eval=t_eval, method='RK45',rtol=1e-16, atol=1e-16)
 t_ref = sol.t
 x_ref = sol.y[0]
 
@@ -36,8 +37,7 @@ y[0] = x0 # x as y
 def sigma(y,t,x):
     return t+x
 def gamma(x,t,y):
-    return x * np.tan(x * (t) + np.arctan(y / x))
-
+    return np.exp((1 / (10 - x)) * (t)) * y
 
 #Complex coefficients for sixth method
 def compute_a_k(k):
@@ -279,6 +279,5 @@ plt.ylabel("x(t)")
 plt.legend(fontsize='x-large') 
 plt.grid(True)
 plt.tight_layout()
-plt.savefig("plots/ricatti.pdf", format='pdf', bbox_inches='tight')
+plt.savefig("plots/1over.pdf", format='pdf', bbox_inches='tight')
 plt.show()
-
