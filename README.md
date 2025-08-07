@@ -41,7 +41,7 @@ python airy.py
 
 | Model                        | Equation Form                                                                                                                                  | Parameters/Description                              |
 | ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
-| **Riccati Equation**      | $\frac{dx}{dt} = x^2 + t^2$, $x(s)=x_0$ | Nonlinear first-order ODE; `q₀(t)`, `q₁(t)`, `q₂(t)` are time-dependent coefficients |
+| **Riccati Equation**      | $\frac{dx}{dt} = x^2 + t^2$, $x(s)=x_0$ | Nonlinear first-order ODE; often used in control theory and dynamic systems |
 | **Singular Equation**           | $\frac{dx}{dt} = \frac{1}{10 - t}$, $x(s)=x_0$ |Exhibits singularity at `t = 10`; useful for testing numerical stability near divergence |
 | **Airy Equation**    |  $\frac{d^2y}{dt^2} - t y = 0$, $y(s)=x$, $y'(s)=z$ |  Linear second-order ODE; arises in quantum mechanics and wave propagation problems    |
 
